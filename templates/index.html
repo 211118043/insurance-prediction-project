@@ -58,11 +58,11 @@
                 const data = await response.json();
                 document.getElementById("results").style.display = "block";
 
-                // Sınıf dağılımını güncelle
+                
                 document.getElementById("alacak-count").textContent = data.distribution.alacak;
                 document.getElementById("almayacak-count").textContent = data.distribution.almayacak;
 
-                // Pasta grafiği için verileri al
+                // Pasta grafiği için veriler
                 const ctx = document.getElementById("prediction-chart").getContext("2d");
                 new Chart(ctx, {
                     type: "pie",
@@ -75,7 +75,7 @@
                     },
                     options: {
                         responsive: true,
-                        maintainAspectRatio: false, // Grafik serbest boyutlandırma
+                        maintainAspectRatio: false, // Grafik  boyutlandırma
                         plugins: {
                             legend: {
                                 position: 'top',
@@ -93,7 +93,7 @@
                 });
 
 
-                // İndirme linkini ayarla
+                // İndirme linki için
                 document.getElementById("download-link").href = data.download_url;
             } else {
                 alert("Hata: " + (await response.text()));

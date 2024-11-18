@@ -9,9 +9,9 @@ import uuid  # Benzersiz dosya isimleri için
 
 app = Flask(__name__)
 
-# Model ve özellikleri yükleme
-model = joblib.load("catboost_model.pkl")
-model_features = joblib.load("model_features.pkl")
+#
+model = joblib.load("catboost_model_eski.pkl")
+model_features = joblib.load("model_features_eski.pkl")
 
 @app.route("/")
 def index():
@@ -26,26 +26,26 @@ def predict():
     if file.filename == "":
         return jsonify({"error": "Geçerli bir dosya seçin!"}), 400
 
-    # Dosyayı oku
+   
     start_time = time.time()  # Zaman ölçümünü başlat
     input_data = pd.read_csv(file)
     print(f"Yüklenen veri satır sayısı: {input_data.shape[0]}")
 
-    # Eksik sütunları kontrol et
+    
     missing_features = set(model_features) - set(input_data.columns)
     if missing_features:
         return jsonify({"error": f"Eksik özellikler: {missing_features}"}), 400
 
-    # Sadece gerekli sütunları seç
+    
     input_data = input_data[model_features]
 
-    # Giriş verilerini ölçeklendirme
+    # Giriş verileri için scaler
     scaler = StandardScaler()
     input_data[['Age', 'Annual_Premium', 'Policy_Sales_Channel', 'Region_Code']] = scaler.fit_transform(
         input_data[['Age', 'Annual_Premium', 'Policy_Sales_Channel', 'Region_Code']]
     )
 
-    # Tahmin yap
+   
     print("Tahmin işlemi başlıyor...")
     predictions = model.predict(input_data)
     print("Tahmin işlemi tamamlandı.")
@@ -54,7 +54,7 @@ def predict():
 
     input_data["Prediction"] = predictions
 
-    # Tahmin oranlarını ve sınıf dağılımını hesapla
+    
     prediction_counts = Counter(predictions)
     total = sum(prediction_counts.values())
     prediction_percentages = {
@@ -62,7 +62,7 @@ def predict():
         "1": round((prediction_counts.get(1, 0) / total) * 100, 2)   # Alacak
     }
 
-    # Benzersiz dosya ismi oluştur
+    #farklı dosya ismi
     output_file = f"predictions_{uuid.uuid4().hex}.csv"
     input_data.to_csv(output_file, index=False)
     print(f"Sonuç dosyası kaydedildi: {output_file}")
@@ -79,11 +79,11 @@ def predict():
 
 @app.route("/download/<filename>")
 def download(filename):
-    # Dosya varlığını kontrol et
+    # Dosya var mı
     if not os.path.exists(filename):  # Eğer dosya yoksa
         return "Dosya bulunamadı! Lütfen tahmin işlemini tekrar yapın.", 404
 
-    # Dosyayı gönder
+    # Dosyayı gönderme
     return send_file(filename, as_attachment=True)
 
 if __name__ == "__main__":
