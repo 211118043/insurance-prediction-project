@@ -5,6 +5,13 @@ Bu proje, kullanıcıların sigorta satın alma olasılığını tahmin etmek i�
 ## 🎯 Projenin Amacı
 Kullanıcıların demografik ve geçmiş sigorta bilgilerine dayanarak, sigorta satın alma olasılıklarını tahmin etmek. Proje, sigorta şirketlerinin hedef müşteri kitlesini daha iyi anlamalarına ve doğru stratejiler geliştirmelerine yardımcı olmayı amaçlamaktadır.
 
+## 🎨 Ekran Görüntüleri
+
+### Ana Sayfa
+Kullanıcıların veri yüklediği ve tahmin yaptığı ana sayfa:
+![Ana Sayfa](static/screenshots/homepage.jpg)
+![İndirme Sayfası](static/screenshots/downloadpage.jpg)
+
 ## 📊 Veri Hakkında
 Veri Kaggle'dan alınmıştır ve aşağıdaki özellikleri içermektedir:
 
