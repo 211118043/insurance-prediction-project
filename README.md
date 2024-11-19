@@ -43,7 +43,7 @@ Bu proje kapsamında çeşitli modeller denenmiş ve aşağıdaki sonuçlar elde
 ## 📜 Medium Yazısı
 Proje boyunca karşılaştığım süreçleri ve çözümlerimi Medium üzerinde detaylı bir şekilde ele aldım. Daha fazla bilgi için yazımı okuyabilirsiniz:
 
-🔗 [Proje Süreci ve Deneyimlerim](https://medium.com/@kullaniciadi/proje-süreci-ve-detaylar-123456789)
+🔗 [Proje Süreci ve Deneyimlerim](https://medium.com/@meltemdanismaz/dengesiz-veri-setleriyle-%C3%A7al%C4%B1%C5%9Fmak-health-insurance-cross-sell-prediction-catboost-4c45a6bb0c61)
 
 ---
 
@@ -55,7 +55,7 @@ Kaggle'da farklı modeller ve optimizasyonlar üzerine çalıştım. Bu çalış
 ---
 
 ## 📂 Proje Yapısı
-insurance-prediction-project/ ├── data/ │ ├── raw/ # Ham veri dosyaları (işlenmemiş) │ │ ├── generated_dataset.csv │ │ ├── test.csv │ │ ├── train.csv │ ├── processed/ # İşlenmiş ve temizlenmiş veri │ ├── Insurance_Data_With_Features.csv ├── src/ # Kaynak kodlar │ ├── app.py # Flask uygulaması │ ├── model/ │ ├── catboost_model.pkl # Eğitimli model dosyası │ ├── model_features.pkl # Modelde kullanılan özellikler ├── static/ # Statik dosyalar (CSS, görseller) │ ├── download.png ├── templates/ # HTML şablonları │ ├── index.html # Ana sayfa │ ├── thank_you.html # İndirme sonrası teşekkür sayfası ├── notebooks/ # Jupyter Notebook dosyaları │ ├── exploratory_analysis.ipynb # Veri analizi │ ├── model_training.ipynb # Model eğitimi ├── requirements.txt # Python bağımlılıkları ├── README.md # Proje açıklaması ve yönergeler
+insurance-prediction-project/ ├── data/ │ ├── raw/ # Ham veri dosyaları (işlenmemiş) │ │ ├── generated_dataset.csv │ │ ├── test.csv │ │ ├── train.csv │ ├── processed/ # İşlenmiş ve temizlenmiş veriyle model geliştirme │ ├── Insurance_Data_With_ROC.ipynb├── src/ # Kaynak kodlar │ ├── app.py # Flask uygulaması │ ├── model/ │ ├── catboost_model.pkl # Eğitimli model dosyası │ ├── model_features.pkl # Modelde kullanılan özellikler ├── static/ # Statik dosyalar ( görseller) │ ├── download.png ├── templates/ # HTML şablonları │ ├── index.html # Ana sayfa │ ├── thank_you.html # İndirme sonrası teşekkür sayfası ├── README.md # Proje açıklaması ve yönergeler
 
 
 ## 🛠️ Kullanılan Teknolojiler
