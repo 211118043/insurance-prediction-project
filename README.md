@@ -9,8 +9,8 @@ Kullanıcıların demografik ve geçmiş sigorta bilgilerine dayanarak, sigorta 
 
 ### Ana Sayfa
 Kullanıcıların veri yüklediği ve tahmin yaptığı ana sayfa:
-![Ana Sayfa](static/screenshots/homepage.jpg)
-![İndirme Sayfası](static/screenshots/downloadpage.jpg)
+![Ana Sayfa](src/static/screenshots/homepage.jpg)
+![İndirme Sayfası](src/static/screenshots/downloadpage.jpg)
 
 ## 📊 Veri Hakkında
 Veri Kaggle'dan alınmıştır ve aşağıdaki özellikleri içermektedir:
